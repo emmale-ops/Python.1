@@ -1,0 +1,17 @@
+"""Given a positive integer, return the number of steps it takes to reach 1 according to the rules of the Collatz Conjecture"""
+
+def steps(number):
+    step = 0
+    
+    """If the integer is equal o below zero, return an error"""
+    if  number <= 0:
+        raise ValueError("Only positive integers are allowed")
+
+    """If the integer is even, divide it by 2. If the integer is odd, multiply it by 3 and add 1. Until the integer is equal to 1. Return the number of steps necessary"""
+    while number > 1:
+        step = step + 1
+        if number%2 == 0:
+            number = number//2
+        else:
+            number = number*3 + 1
+    return step
